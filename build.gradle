@@ -7,7 +7,7 @@ class Version {
 buildscript {
 
     //コピペを簡便にするためのプロジェクトテンプレートにあるライブラリ専用のバージョン置き場
-    ext.kotlin_version = "1.5.21"
+    ext.kotlin_version = "1.5.30"
     ext.coroutine_version = "1.5.2"
     ext.hilt_version = "2.38.1"
     ext.nav_version = "2.3.5"
