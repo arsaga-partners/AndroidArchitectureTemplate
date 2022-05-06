@@ -1,1 +1,0 @@
-package jp.arsaga.presentation.view.{Small}.screen
