@@ -11,7 +11,7 @@ buildscript {
     ext.coroutine_version = "1.6.0"
     ext.hilt_version = "2.40.5"
     ext.nav_version = "2.4.1"
-    ext.lifecycle_version = "2.4.0"
+    ext.lifecycle_version = "2.4.1"
     ext.timber_version = "5.0.1"
     ext.appcompat_version = "1.4.1"
     ext.material_version = "1.5.0"
