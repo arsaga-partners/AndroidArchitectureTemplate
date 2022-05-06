@@ -1,20 +1,11 @@
 package jp.arsaga.dataStore.repository.core.api
 
 import android.app.Activity
-import jp.arsaga.dataStore.gateway.local.SharedPreferenceController
-import jp.arsaga.dataStore.gateway.server.ApiClient
-import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore
-import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore.Companion.getSharedPreferences
-import jp.arsaga.dataStore.repository.core.R
+import jp.arsaga.dataStore.repository.core.TransitionCallbackHandler
 import jp.co.arsaga.extensions.gateway.AbstractApiDispatchCommand
 import jp.co.arsaga.extensions.gateway.ApiContext
 import jp.co.arsaga.extensions.gateway.NormalApiContext
-import jp.arsaga.dataStore.repository.core.TransitionCallbackHandler
-import jp.arsaga.domain.entity.core.type.LocalDataKey
-import jp.co.arsaga.extensions.gateway.startLaunchActivity
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.net.UnknownHostException
 

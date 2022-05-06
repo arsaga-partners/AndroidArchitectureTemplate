@@ -2,10 +2,10 @@ package jp.arsaga.dataStore.repository.auth
 
 import android.content.Context
 import jp.arsaga.dataStore.gateway.local.ReactiveLocalDataSaver
-import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore
-import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore.Companion.getSharedPreferences
+import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore.getSharedPreferences
 import jp.arsaga.dataStore.repository.core.TransitionCallbackHandler
 import jp.arsaga.domain.entity.core.type.LocalDataKey
+import jp.arsaga.domain.entity.core.type.LocalSaveDataFileName
 import jp.arsaga.domain.useCase.auth.AuthUseCase
 import jp.arsaga.domain.useCase.core.ActivityCallback
 import kotlinx.coroutines.CoroutineScope
@@ -21,7 +21,7 @@ class AuthCommandImpl(
     override fun saveLocalCacheData(flow: Flow<String?>, localDataKey: LocalDataKey<String?>) {
         ReactiveLocalDataSaver(
             coroutineScope, flow, localDataKey
-        ) { EncryptedSharedPreferencesStore.USER_DEFAULT.getSharedPreferences(context, "") }
+        ) { LocalSaveDataFileName.USER_DEFAULT.getSharedPreferences(context, "") }
             .apply(reactiveLocalDataSaver::add)
     }
 

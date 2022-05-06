@@ -2,9 +2,9 @@ package jp.arsaga.dataStore.repository.auth
 
 import android.content.Context
 import jp.arsaga.dataStore.gateway.local.SharedPreferenceController
-import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore
-import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore.Companion.getSharedPreferences
+import jp.arsaga.dataStore.repository.core.EncryptedSharedPreferencesStore.getSharedPreferences
 import jp.arsaga.domain.entity.core.type.LocalDataKey
+import jp.arsaga.domain.entity.core.type.LocalSaveDataFileName
 import jp.arsaga.domain.useCase.auth.AuthUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +21,7 @@ class AuthQueryImpl(
     ) {
         coroutineScope.launch(Dispatchers.IO) {
             SharedPreferenceController.get(
-                EncryptedSharedPreferencesStore.USER_DEFAULT.getSharedPreferences(context, ""),
+                LocalSaveDataFileName.USER_DEFAULT.getSharedPreferences(context, ""),
                 localDataKey as LocalDataKey.String
             ).run {
                 callback(this)
