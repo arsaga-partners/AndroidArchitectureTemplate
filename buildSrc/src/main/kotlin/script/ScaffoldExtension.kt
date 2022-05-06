@@ -174,18 +174,25 @@ object ScaffoldExtension {
     ): List<() -> Unit> =
         if (from.isDirectory) listOf()
         else {
-            val layerName = sliceLastSlashAfter(from.parent.toString())
-            exportPathList.mapNotNull { to ->
+            val layerNameList = ModuleStructure.LayerType.values().map { it.name }
+            val layerName = from.parent.toString()
+                .split("/")
+                .findLast { it in layerNameList }
+            if (layerName == null) listOf()
+            else exportPathList.mapNotNull { to ->
                 if (!to.toString().contains("/$layerName/")) null
                 else {
                     {
                         val moduleName = getModuleName(to, projectPath)
+                        val featureName = from.path.toString()
+                            .substringAfterLast(layerName)
+                            .substringBeforeLast("/")
                         from.absolutePath
                             .replace(
                                 "/moduleTemplate/layer",
                                 moduleName
                             ).let {
-                                createLayerClass(from, it, moduleName, layerName)
+                                createLayerClass(from, it, moduleName, featureName, layerName)
                             }
                     }
                 }
@@ -199,11 +206,12 @@ object ScaffoldExtension {
         from: File,
         toPath: String,
         moduleName: String,
+        featureName: String,
         layerName: String
     ) {
         val domainName = sliceLastSlashAfter(moduleName)
         convertLayerClassTemplatePath(toPath, domainName).run(::File)
-            .run { sourceCodeFilePathAdapter(this, moduleName) }
+            .run { sourceCodeFilePathAdapter(this, moduleName + featureName) }
             .run {
                 createNewFile(from, this) {
                     decorateLayerClassTemplateFile(it, moduleName, layerName, domainName)
