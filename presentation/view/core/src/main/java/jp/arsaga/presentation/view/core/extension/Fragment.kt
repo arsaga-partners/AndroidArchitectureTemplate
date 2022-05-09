@@ -17,11 +17,14 @@ fun Fragment.rootLayout(
     isEnabledBack: Boolean = true,
     headerRightContent: @Composable RowScope.() -> Unit = {},
     content: @Composable PaddingValues.() -> Unit
-): View = composable(titleId) {
-    RootLayout(getString(titleId), modifier, isEnabledBack, headerRightContent, content) {
-        findNavController().navigateUp()
-    }
-}
+): View = rootLayout(
+    titleId,
+    getString(titleId),
+    modifier,
+    isEnabledBack,
+    headerRightContent,
+    content
+)
 
 fun Fragment.rootLayout(
     navFragmentId: Int,
