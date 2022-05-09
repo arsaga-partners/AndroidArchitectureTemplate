@@ -20,8 +20,7 @@ fun MainAppBar(
     title: String?,
     backAction: () -> Unit,
     isEnabledBack: Boolean = false,
-    style: TextStyle = AppTheme.typography().h1,
-    rightContent: @Composable RowScope.() -> Unit = {}
+    rightContent: @Composable RowScope.() -> Unit
 ) {
     MainAppBar(
         leftContent = {
@@ -34,7 +33,7 @@ fun MainAppBar(
                 Text(
                     text = it,
                     maxLines = 1,
-                    style = style,
+                    style = AppTheme.typography().h1,
                     modifier = Modifier.weight(1F)
                 )
             }
