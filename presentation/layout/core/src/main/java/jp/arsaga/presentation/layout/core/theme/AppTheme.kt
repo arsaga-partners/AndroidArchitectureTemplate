@@ -11,24 +11,26 @@ fun AppTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colors = colors(),
-        typography = typography(),
-        shapes = shapes(),
+        colors = AppTheme.colors(),
+        typography = AppTheme.typography(),
+        shapes = AppTheme.shapes(),
         content = content
     )
 }
 
-@Composable
-private fun colors(): Colors = MaterialTheme.colors.copy(
+object AppTheme {
+    @Composable
+    fun colors(): Colors = MaterialTheme.colors.copy(
 
-)
+    )
 
-@Composable
-private fun typography(): Typography = MaterialTheme.typography.copy(
+    @Composable
+    fun typography(): Typography = MaterialTheme.typography.copy(
 
-)
+    )
 
-@Composable
-private fun shapes(): Shapes = MaterialTheme.shapes.copy(
+    @Composable
+    fun shapes(): Shapes = MaterialTheme.shapes.copy(
 
-)
+    )
+}
