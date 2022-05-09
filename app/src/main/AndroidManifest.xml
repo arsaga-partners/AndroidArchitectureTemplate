@@ -10,7 +10,7 @@
         android:label="${appName}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ArchitectureTemplate"
+        android:theme="@style/Theme.SplashTheme"
         tools:ignore="LockedOrientationActivity">
 
         <service
@@ -25,6 +25,7 @@
             android:name=".activity.DeepLinkActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.ArchitectureTemplate"
             android:exported="true">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
@@ -48,7 +49,8 @@
         </activity>
         <activity
             android:exported="true"
-            android:name=".activity.AuthActivity">
+            android:name=".activity.AuthActivity"
+            android:theme="@style/Theme.ArchitectureTemplate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,7 +59,8 @@
         </activity>
         <activity
             android:exported="true"
-            android:name=".activity.MainActivity" />
+            android:name=".activity.MainActivity"
+            android:theme="@style/Theme.ArchitectureTemplate" />
     </application>
 
 </manifest>
