@@ -1,5 +1,6 @@
 package jp.arsaga.presentation.view.core.extension
 
+import android.view.View
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
@@ -16,11 +17,9 @@ fun Fragment.rootLayout(
     isEnabledBack: Boolean = true,
     headerRightContent: @Composable RowScope.() -> Unit = {},
     content: @Composable PaddingValues.() -> Unit
-) {
-    composable(titleId) {
-        RootLayout(getString(titleId), modifier, isEnabledBack, headerRightContent, content) {
-            findNavController().navigateUp()
-        }
+): View = composable(titleId) {
+    RootLayout(getString(titleId), modifier, isEnabledBack, headerRightContent, content) {
+        findNavController().navigateUp()
     }
 }
 
@@ -31,10 +30,8 @@ fun Fragment.rootLayout(
     isEnabledBack: Boolean = true,
     headerRightContent: @Composable RowScope.() -> Unit = {},
     content: @Composable PaddingValues.() -> Unit
-) {
-    composable(navFragmentId) {
-        RootLayout(title, modifier, isEnabledBack, headerRightContent, content) {
-            findNavController().navigateUp()
-        }
+): View = composable(navFragmentId) {
+    RootLayout(title, modifier, isEnabledBack, headerRightContent, content) {
+        findNavController().navigateUp()
     }
 }

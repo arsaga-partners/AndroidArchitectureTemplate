@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import jp.arsaga.domain.useCase.auth.AuthUseCase
 import jp.arsaga.domain.useCase.core.ActivityCallback
 import jp.arsaga.presentation.view.auth.R
-import jp.arsaga.presentation.view.core.extension.composable
+import jp.arsaga.presentation.view.core.extension.rootLayout
 import jp.arsaga.presentation.viewModel.auth.AuthViewModel
 import jp.arsaga.presentation.viewModel.core.extension.BaseViewModel
 import jp.co.arsaga.extensions.view.getNavController
@@ -37,7 +37,7 @@ class AuthFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = composable(R.id.loginFragment) {
+    ): View = rootLayout(R.id.loginFragment, "") {
         Text (text = "Hello Masaki!")
     }
 }
