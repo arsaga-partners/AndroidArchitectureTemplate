@@ -9,9 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.compose.material.Scaffold
 import jp.arsaga.domain.entity.{Small}.dto.{Large}Action
 import jp.arsaga.presentation.layout.core.widget.MainAppBar
+import jp.arsaga.presentation.layout.{Small}.R
 import jp.arsaga.presentation.layout.{Small}.screen.{Large}Screen
 import jp.arsaga.presentation.view.{Small}.navigator.{Large}Navigator
-import jp.co.arsaga.extensions.compose.screen.composable
+import jp.arsaga.presentation.view.core.extension.rootLayout
 import jp.arsaga.presentation.viewModel.{Small}.{Large}ViewModel
 import jp.arsaga.presentation.viewModel.core.extension.BaseViewModel
 
@@ -31,13 +32,9 @@ class {Large}Fragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = composable(R.navigation.nav_global) {
-        Scaffold(
-            topBar = { MainAppBar("") }
-        ) {
-            {Large}Screen(
-                {Small}Action = {Large}Action()
-            )
-        }
+    ): View = rootLayout(R.navigation.nav_global, "") {
+        {Large}Screen(
+            {Small}Action = {Large}Action()
+        )
     }
 }
