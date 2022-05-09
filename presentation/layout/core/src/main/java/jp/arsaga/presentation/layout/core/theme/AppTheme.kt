@@ -7,6 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Shapes
 import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.ui.platform.LocalContext
 
 @Composable
@@ -24,11 +25,13 @@ fun AppTheme(
 object AppTheme {
 
     @Composable
+    @ReadOnlyComposable
     fun typography(): Typography = MaterialTheme.typography.copy(
 
     )
 
     @Composable
+    @ReadOnlyComposable
     fun shapes(): Shapes = MaterialTheme.shapes.copy(
 
     )
