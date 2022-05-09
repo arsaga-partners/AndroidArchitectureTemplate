@@ -1,4 +1,4 @@
-package jp.arsaga.presentation.layout.core.extension
+package jp.arsaga.presentation.layout.core.theme
 
 import androidx.compose.ui.unit.Dp
 
