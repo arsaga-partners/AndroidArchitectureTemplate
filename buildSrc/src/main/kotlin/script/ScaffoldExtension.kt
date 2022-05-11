@@ -249,9 +249,9 @@ object ScaffoldExtension {
             .run { substring(indexOf(layerName)) }
             .replace("/", ".")
             .removePrefix(layerName.plus("."))
-        it.replace("{Small}", pathString)
-            .replace("{Medium}", domainName)
-            .replace("{Large}", domainName.capitalize())
+        it.replace("{DomainPath}", pathString)
+            .replace("{DomainDownerCamel}", domainName)
+            .replace("{DomainUpperCamel}", domainName.capitalize())
     }
 
     /**

@@ -1,6 +1,6 @@
-package jp.arsaga.domain.entity.{Small}.dto
+package jp.arsaga.domain.entity.{DomainPath}.dto
 
 
-class {Large}Action()
+class {DomainUpperCamel}Action()
 
-fun mock{Large}Action() = {Large}Action()
+fun mock{DomainUpperCamel}Action() = {DomainUpperCamel}Action()

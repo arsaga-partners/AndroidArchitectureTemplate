@@ -1,10 +1,10 @@
-package jp.arsaga.domain.useCase.{Small}
+package jp.arsaga.domain.useCase.{DomainPath}
 
 import jp.arsaga.domain.useCase.core.BaseUseCase
 
-class {Large}UseCase<NavCallback>(
+class {DomainUpperCamel}UseCase<NavCallback>(
     override val dependency: Dependency<NavCallback>
-) : BaseUseCase<{Large}UseCase.Dependency<NavCallback>>  {
+) : BaseUseCase<{DomainUpperCamel}UseCase.Dependency<NavCallback>>  {
 
     data class Dependency<NavCallback>(
         override val navigator: Navigator<NavCallback>,

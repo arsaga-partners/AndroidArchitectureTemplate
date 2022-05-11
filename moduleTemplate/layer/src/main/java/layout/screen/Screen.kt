@@ -1,20 +1,20 @@
-package jp.arsaga.presentation.layout.{Small}.screen
+package jp.arsaga.presentation.layout.{DomainPath}.screen
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.Modifier
-import jp.arsaga.domain.entity.{Small}.dto.{Large}Action
-import jp.arsaga.presentation.layout.{Small}.widget.{Large}Widget
+import jp.arsaga.domain.entity.{DomainPath}.dto.{DomainUpperCamel}Action
+import jp.arsaga.presentation.layout.{DomainPath}.widget.{DomainUpperCamel}Widget
 
 
 @Composable
-fun {Large}Screen(
-    {Medium}Action: {Large}Action
+fun {DomainUpperCamel}Screen(
+    {DomainDownerCamel}Action: {DomainUpperCamel}Action
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
     ) {
-        {Large}Widget()
+        {DomainUpperCamel}Widget()
     }
 }

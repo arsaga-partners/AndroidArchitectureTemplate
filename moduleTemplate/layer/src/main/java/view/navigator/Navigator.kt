@@ -1,7 +1,7 @@
-package jp.arsaga.presentation.view.{Small}.navigator
+package jp.arsaga.presentation.view.{DomainPath}.navigator
 
-import jp.arsaga.domain.useCase.{Small}.{Large}UseCase
+import jp.arsaga.domain.useCase.{DomainPath}.{DomainUpperCamel}UseCase
 import jp.arsaga.domain.useCase.core.ActivityCallback
 
 
-object {Large}Navigator : {Large}UseCase.Navigator<ActivityCallback> {}
+object {DomainUpperCamel}Navigator : {DomainUpperCamel}UseCase.Navigator<ActivityCallback> {}
