@@ -9,7 +9,7 @@ import jp.arsaga.presentation.layout.{Small}.widget.{Large}Widget
 
 @Composable
 fun {Large}Screen(
-    {Small}Action: {Large}Action
+    {Medium}Action: {Large}Action
 ) {
     Column(
         modifier = Modifier

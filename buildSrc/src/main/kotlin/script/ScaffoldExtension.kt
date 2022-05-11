@@ -250,6 +250,7 @@ object ScaffoldExtension {
             .replace("/", ".")
             .removePrefix(layerName.plus("."))
         it.replace("{Small}", pathString)
+            .replace("{Medium}", domainName)
             .replace("{Large}", domainName.capitalize())
     }
 

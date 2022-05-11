@@ -34,7 +34,7 @@ class {Large}Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View = rootLayout(R.navigation.nav_global, "") {
         {Large}Screen(
-            {Small}Action = {Large}Action()
+            {Medium}Action = {Large}Action()
         )
     }
 }
