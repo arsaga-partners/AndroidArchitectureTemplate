@@ -20,12 +20,12 @@ object ModuleExtension {
             .find { projectName == it.name }
     }
 
-    internal fun implAllModule(
-        rootModuleType: ProjectModule.Type,
+    internal fun eachAllModule(
+        excludedModuleSet: Set<ProjectModule.Type>,
         importAction: (ProjectModule.Type) -> Unit
     ) {
         ProjectModule.Type.values().toSet()
-            .minus(rootModuleType).forEach {
+            .minus(excludedModuleSet).forEach {
                 importAction(it)
             }
     }

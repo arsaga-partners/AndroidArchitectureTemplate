@@ -1,7 +1,7 @@
+import org.gradle.api.Project
+import script.ModuleExtension
 import script.ModuleExtension.api
 import script.ModuleExtension.impl
-import script.ModuleExtension
-import org.gradle.api.Project
 
 /**
  * 各build.gradle.ktsから呼び出す関数
@@ -19,6 +19,7 @@ object ModuleStructure {
     enum class DomainType {
         // 共通モジュール
         core,
+
         // 認証モジュール
         auth,
     }
@@ -98,8 +99,13 @@ object ModuleStructure {
     ) = project.dependencies.apply {
         when (moduleType) {
             // 親モジュール
-            ProjectModule.Type._app -> ModuleExtension.implAllModule(ProjectModule.Type._app) {
-                impl(it)
+            ProjectModule.Type._app -> {
+                val rootModuleSet = ProjectModule.Type.values()
+                    .filter { it.layerType == null && it.domainType == null }
+                    .toSet()
+                ModuleExtension.eachAllModule(rootModuleSet) {
+                    impl(it)
+                }
             }
             ProjectModule.Type._dataStore_repository -> {
                 ModuleExtension.byLayerModuleList(LayerType.repository).forEach {
