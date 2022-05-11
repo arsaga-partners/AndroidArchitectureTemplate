@@ -17,8 +17,10 @@ object ModuleStructure {
      * アプリ内で扱うドメイン(概念)一覧
      */
     enum class DomainType {
+        // 共通モジュール
         core,
-        auth
+        // 認証モジュール
+        auth,
     }
 
     /**
