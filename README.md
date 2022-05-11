@@ -9,7 +9,7 @@
 ## 使い方
 1. Github上でこのレポジトリを複製する
 2. プロジェクト設定の値を修正する => [プロジェクト設定](./buildSrc/src/main/kotlin/ProjectProperty.kt)、[モジュール設定](./buildSrc/src/main/kotlin/ModuleStructure.kt)
-3. Gitサブモジュールを有効化する
+3. extensionsディレクトリにあるGitサブモジュールを有効化する(SourceTreeを使うとワンクリック)
 
 ## モジュール自動生成機能の使い方
 1. ModuleStructureにスネークケースでモジュール名を追加
