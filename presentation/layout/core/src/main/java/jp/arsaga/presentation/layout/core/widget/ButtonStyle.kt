@@ -12,14 +12,13 @@ enum class ButtonStyle(
 ) {
 }
 
-@Composable
-fun RowScope.ButtonContent(
+fun buttonContent(
     text: String,
     buttonStyle: ButtonStyle,
     modifier: Modifier = Modifier,
     leftIcon: @Composable RowScope.() -> Unit,
     rightIcon: @Composable RowScope.() -> Unit,
-) {
+): @Composable RowScope.() -> Unit = {
     leftIcon(this)
     Text(
         text = text,
