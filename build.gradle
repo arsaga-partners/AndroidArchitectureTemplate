@@ -13,7 +13,7 @@ buildscript {
     ext.nav_version = "2.4.2"
     ext.lifecycle_version = "2.4.1"
     ext.timber_version = "5.0.1"
-    ext.appcompat_version = "1.4.1"
+    ext.appcompat_version = "1.4.2"
     ext.material_version = "1.6.0"
     ext.swiperefreshlayout_version = "1.1.0"
     ext.viewpager2_version = "1.0.0"
@@ -67,7 +67,7 @@ subprojects {
                 implementation "com.jakewharton.timber:timber:$timber_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
                 implementation "androidx.compose.runtime:runtime:$compose_version"
-                implementation platform('com.google.firebase:firebase-bom:30.0.1')
+                implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
                 switch (subProject.getPath()) {
                     case ":app":
