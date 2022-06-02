@@ -34,7 +34,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
@@ -67,7 +67,7 @@ subprojects {
                 implementation "com.jakewharton.timber:timber:$timber_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
                 implementation "androidx.compose.runtime:runtime:$compose_version"
-                implementation platform('com.google.firebase:firebase-bom:30.0.1')
+                implementation platform('com.google.firebase:firebase-bom:30.1.0')
 
                 switch (subProject.getPath()) {
                     case ":app":
