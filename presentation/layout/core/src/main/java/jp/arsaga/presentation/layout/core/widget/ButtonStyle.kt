@@ -16,8 +16,8 @@ fun buttonContent(
     text: String,
     buttonStyle: ButtonStyle,
     modifier: Modifier = Modifier,
-    leftIcon: @Composable RowScope.() -> Unit,
-    rightIcon: @Composable RowScope.() -> Unit,
+    leftIcon: @Composable RowScope.() -> Unit = {},
+    rightIcon: @Composable RowScope.() -> Unit = {},
 ): @Composable RowScope.() -> Unit = {
     leftIcon(this)
     Text(
