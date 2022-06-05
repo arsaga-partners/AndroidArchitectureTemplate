@@ -1,5 +1,7 @@
 package script
 
+import ModuleStructure
+import ProjectModule
 import java.io.*
 import java.nio.file.Files
 import java.nio.file.Path
@@ -7,6 +9,17 @@ import java.nio.file.Paths
 import kotlin.streams.toList
 
 object ScaffoldExtension {
+
+    data class ArchitectureContext(
+        val pathString: String,
+        val domainName: String,
+    )
+
+    enum class EmbedType(val query: ArchitectureContext.() -> String) {
+        DomainPath({ pathString }),
+        DomainDownerCamel({ domainName }),
+        DomainUpperCamel({ domainName.capitalize() }),
+    }
 
     /**
      * 各モジュールがどのレイヤーにいるのか分類するプロパティ
@@ -249,9 +262,10 @@ object ScaffoldExtension {
             .run { substring(indexOf(layerName)) }
             .replace("/", ".")
             .removePrefix(layerName.plus("."))
-        it.replace("{DomainPath}", pathString)
-            .replace("{DomainDownerCamel}", domainName)
-            .replace("{DomainUpperCamel}", domainName.capitalize())
+        val context = ArchitectureContext(pathString, domainName)
+        EmbedType.values().fold(it) { acc, embedType ->
+            acc.replace("{${embedType.name}}", embedType.query(context))
+        }
     }
 
     /**
