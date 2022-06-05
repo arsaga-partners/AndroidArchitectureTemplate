@@ -22,7 +22,6 @@ object ModuleStructure {
 
         // 認証モジュール
         auth,
-        auth_facebook,
     }
 
     /**
