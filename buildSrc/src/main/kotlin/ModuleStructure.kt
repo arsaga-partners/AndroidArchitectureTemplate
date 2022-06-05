@@ -22,12 +22,18 @@ object ModuleStructure {
 
         // 認証モジュール
         auth,
+        auth_facebook,
     }
 
     /**
      * モジュールの各レイヤーに特徴的な名前の種類
      */
     enum class LayerType {
+        /**
+         * Androidのリソースフォルダ
+         */
+        res,
+
         /**
          * ナビゲーション・端末依存解決について書くレイヤー
          * 主にActivity, Fragment, View, Navigation, アニメーション関連のクラスを置く
