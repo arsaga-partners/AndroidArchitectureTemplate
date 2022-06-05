@@ -29,11 +29,6 @@ object ModuleStructure {
      */
     enum class LayerType {
         /**
-         * Androidのリソースフォルダ
-         */
-        res,
-
-        /**
          * ナビゲーション・端末依存解決について書くレイヤー
          * 主にActivity, Fragment, View, Navigation, アニメーション関連のクラスを置く
          * 依存関係にまつわる主な処理はServiceにあるNavigatorを継承したクラスの作成、
